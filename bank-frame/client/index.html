@@ -58,6 +58,37 @@
         <tfoot>
         </tfoot>
     </table>
-    <script src="js/index.js"></script>
+    <script src="js/app/models/Negociacao.js"></script>
+    <script>
+//criando instâncias para classe Negociacao
+/*1ª forma
+    var n1 = new Negociacao();
+    console.log(n1); 
+    var n2 = new Negociacao();
+    console.log(n2);
+*/ 
+
+/*2ª forma
+        var n1 = new Negociacao(new Date(), 5, 700);
+        console.log(n1);
+        var volume = n1.quantidade * n1.valor;
+        console.log(volume);
+*/        
+
+/*3ª forma OOO  
+        var n1 = new Negociacao(new Date(), 5, 700);
+        console.log(n1);
+        var volume = n1.obtemVolume();
+        console.log(volume); 
+
+*/
+
+//4ª forma OOO | métodos acessadores
+        var n1 = new Negociacao(new Date(), 5, 700);
+        console.log(n1.getQuantidade());
+        console.log(n1.getData());
+        console.log(n1.getValor());
+        console.log(n1.getVolume());
+    </script>
 </body>
 </html>
