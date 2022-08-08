@@ -60,35 +60,12 @@
     </table>
     <script src="js/app/models/Negociacao.js"></script>
     <script>
-//criando instâncias para classe Negociacao
-/*1ª forma
-    var n1 = new Negociacao();
-    console.log(n1); 
-    var n2 = new Negociacao();
-    console.log(n2);
-*/ 
-
-/*2ª forma
-        var n1 = new Negociacao(new Date(), 5, 700);
-        console.log(n1);
-        var volume = n1.quantidade * n1.valor;
-        console.log(volume);
-*/        
-
-/*3ª forma OOO  
-        var n1 = new Negociacao(new Date(), 5, 700);
-        console.log(n1);
-        var volume = n1.obtemVolume();
-        console.log(volume); 
-
-*/
-
-//4ª forma OOO | métodos acessadores
-        var n1 = new Negociacao(new Date(), 5, 700);
-        console.log(n1.getQuantidade());
-        console.log(n1.getData());
-        console.log(n1.getValor());
-        console.log(n1.getVolume());
+//criando instâncias para classe Negociacao de forma orientada a objeto por métodos acessadores
+    let n1 = new Negociacao(new Date(), 5, 700);       
+    console.log(n1.quantidade);
+    console.log(n1.data);
+    console.log(n1.valor);
+    console.log(n1.volume);
     </script>
 </body>
 </html>

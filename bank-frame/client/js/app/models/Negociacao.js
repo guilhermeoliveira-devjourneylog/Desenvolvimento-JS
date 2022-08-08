@@ -1,47 +1,28 @@
 class Negociacao {
-/*1ª forma
-  constructor() {
-    this.data = new Date();
-    this.quantidade = 1;
-    this.valor = 0.0;
-*/   
-
-/*2ª forma
+//propriedades sendo acessadas somente pelos métodos da classe
  constructor(data, quantidade, valor) {
-  this.data = data;
-  this.quantidade = quantidade;
-  this.valor = valor;
-  }
-
-*/
-
-//3ª forma propriedades sendo acessadas somente pelos métodos da classe
- constructor(data, quantidade, valor) {
-  this._data = data;
+//programação defensiva retornando novo objeto para data 
+  this._data = new Date(data.getTime());
   this._quantidade = quantidade;
   this._valor = valor;
-
+  //objeto imutável instanciado a variavel n1
+  Object.freeze(this);  
   }
 
-//Definindo métodos acessadores 
-  getVolume() {
-    return this.quantidade * this.valor;
+//métodos acessadores
+  get volume() {
+    return this._quantidade * this._valor;
   }
-  
-  getVolume() {
-  return this._quantidade *this._valor;
-}
+//programação defensiva retornando novo objeto para data 
+  get data() {
+  return new Date(this._data.getTime());
+  }
 
-  getData() {
-  return this._data;
-}
-
-  getQuantidade() {
+  get quantidade() {
   return this._quantidade;
-}
+  }
 
-  getValor() {
+  get valor() {
   return this._valor;
   }  
 }
-
