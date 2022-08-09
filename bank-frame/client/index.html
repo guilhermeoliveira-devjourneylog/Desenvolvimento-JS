@@ -10,8 +10,8 @@
 <body class="container">
     
     <h1 class="text-center">Negociações</h1>
-    
-    <form class="form">
+<!-- ligação do método adiciona com a submissão do formulário -->    
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -59,6 +59,7 @@
         </tfoot>
     </table>
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>  
     <script>
 //criando instâncias para classe Negociacao de forma orientada a objeto por métodos acessadores
     let n1 = new Negociacao(new Date(), 5, 700);       
@@ -66,6 +67,8 @@
     console.log(n1.data);
     console.log(n1.valor);
     console.log(n1.volume);
+//instância do controller
+    let negociacaoController = new NegociacaoController();        
     </script>
 </body>
 </html>
