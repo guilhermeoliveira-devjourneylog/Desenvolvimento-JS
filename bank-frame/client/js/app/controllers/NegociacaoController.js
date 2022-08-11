@@ -9,7 +9,10 @@
         this._inputData = $('#data');    
         this._inputQuantidade = $('#quantidade');    
         this._inputValor = $('#valor');
-        this._listaNegociacoes = new ListaNegociacoes();  
+        this._listaNegociacoes = new ListaNegociacoes();
+        this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+//atulização da view passando a lista de negociações         
+        this._negociacoesView.update(this._listaNegociacoes);  
   }
 //método de cancelamento do comportamento de submissão do formulário para captura de dados em adição na lista   
     adiciona(event) {
@@ -17,6 +20,8 @@
     alert('Chamei ação no controller');
 
     this._listaNegociacoes.adiciona(this._criaNegociacao());
+//atualização da view com os dados da negociação    
+    this._negociacoesView.update(this._listaNegociacoes); 
     this._limpaFormulario();
 //teste de blindagem da manipulação de dados da lista de negociações
 //this._listaNegociacoes.negociacoes.length = 0; // vulnerabilidade apagando lista

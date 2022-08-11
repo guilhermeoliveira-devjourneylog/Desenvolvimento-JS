@@ -41,34 +41,22 @@
     </div> 
     <br>
     <br>
-    
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-        </tbody>
-        
-        <tfoot>
-        </tfoot>
-    </table>
+
+    <div id="negociacoesView"></div>
+
     <script src="js/app/models/Negociacao.js"></script>
     <script src="js/app/models/ListaNegociacoes.js"></script>
     <script src="js/app/controllers/NegociacaoController.js"></script>  
     <script src="js/app/helpers/DateHelper.js"></script>  
+    <script src="js/app/views/NegociacoesView.js"></script>  
     <script>
-//criando instâncias para classe Negociacao de forma orientada a objeto por métodos acessadores
+/*criando instâncias para classe Negociacao de forma orientada a objeto por métodos acessadores
     let n1 = new Negociacao(new Date(), 5, 700);       
     console.log(n1.quantidade);
     console.log(n1.data);
     console.log(n1.valor);
     console.log(n1.volume);
+*/    
 //instância do controller
     let negociacaoController = new NegociacaoController();        
     </script>
